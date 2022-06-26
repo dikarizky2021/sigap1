@@ -18,19 +18,21 @@
 
         <activity
             android:name=".SplashScreen"
-            android:exported="true"
+            android:exported="false"
             android:label="sigap">
+
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.Sigap1.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Sigap1.NoActionBar" />
         <activity
             android:name=".DashboardActivity"
             android:exported="false"
