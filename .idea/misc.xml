@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/drawable/custom_input.xml" value="0.1" />
+        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/drawable/shape.xml" value="0.1375" />
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/drawable/shape2.xml" value="0.1425" />
+        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/drawable/shape_btl.xml" value="0.1375" />
+        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_form.xml" value="0.25" />
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_splash_screen.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_form.xml" value="0.8225806451612904" />
