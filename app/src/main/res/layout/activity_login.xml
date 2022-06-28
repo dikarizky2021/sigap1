@@ -48,4 +48,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/masuk" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="4pt"
+        android:text="Sistem Informasi Penegakan PERDA \n Perkada Humanis Tegap Berwibawa \n Kab. Mojokerto "
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>

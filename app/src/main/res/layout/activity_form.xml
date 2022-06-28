@@ -1,9 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FormActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/text_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Form \nPelaporan \nPelanggaran"
+            android:textSize="10pt"
+            android:lineSpacingExtra="-6dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"></TextView>
+
+        <ImageButton
+            android:id="@+id/garis"
+            android:layout_width="167dp"
+            android:layout_height="9dp"
+            android:background="@drawable/shape"
+            app:layout_constraintTop_toBottomOf="@id/text_form"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="12dp">
+
+        </ImageButton>
+
+        <EditText
+            android:id="@+id/NIK"
+            android:layout_width="380dp"
+            android:layout_height="45dp"
+            android:inputType="text"
+            android:hint="NIK Pelanggar"
+            android:background="@drawable/custom_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/garis"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/Nama"
+            android:layout_width="380dp"
+            android:layout_height="45dp"
+            android:hint="Nama Pelanggar"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="text"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/NIK"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp">
+
+        </EditText>
+
+        <Spinner
+            android:id="@+id/jenis_pelanggaran"
+            android:layout_width="380dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/Nama"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+             />
+
+        <Spinner
+            android:id="@+id/detail_pelanggaran"
+            android:layout_width="380dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/jenis_pelanggaran"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp" />
+
+        <Spinner
+            android:id="@+id/tindakan_petugas"
+            android:layout_width="380dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/detail_pelanggaran"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp" />
+
+        <FrameLayout
+            android:id="@+id/peta"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tindakan_petugas"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            ></FrameLayout>
+
+        <EditText
+            android:id="@+id/detail_lokasi"
+            android:layout_width="380dp"
+            android:layout_height="45dp"
+            android:hint="Detail Lokasi"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="text"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/peta"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp">
+
+        </EditText>
+
+        <FrameLayout
+            android:id="@+id/kamera"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/detail_lokasi"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            >
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:src="@drawable/cam"></ImageButton>
+        </FrameLayout>
+        <Button
+            android:id="@+id/btn_simpan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:text="Simpan"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/kamera"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            ></Button>
+        <Button
+            android:id="@+id/btn_batal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btl"
+            android:text="Batal"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_simpan"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            ></Button>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

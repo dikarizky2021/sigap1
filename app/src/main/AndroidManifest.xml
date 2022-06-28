@@ -27,11 +27,11 @@
             android:exported="true"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.Sigap1.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".DashboardActivity"
@@ -40,9 +40,15 @@
             android:theme="@style/Theme.Sigap1.NoActionBar" />
         <activity
             android:name=".FormActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Sigap1.NoActionBar" />
+            android:theme="@style/Theme.Sigap1.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".DetailActivity"
             android:exported="false" />
