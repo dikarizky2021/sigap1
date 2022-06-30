@@ -24,6 +24,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
+            finish();
+            startActivity(new Intent(this, DashboardActivity.class));
+        }
+
         editTextUsername = (EditText) findViewById(R.id.username);
         editTextPassword = (EditText) findViewById(R.id.password);
 
@@ -75,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 progressBar.setVisibility(View.GONE);
+                Toast. makeText(getApplicationContext(),"Post",Toast. LENGTH_SHORT).show();
 
 
                 try {
@@ -106,6 +112,8 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Toast. makeText(getApplicationContext(),e.toString(),Toast. LENGTH_SHORT).show();
+
                 }
             }
 
