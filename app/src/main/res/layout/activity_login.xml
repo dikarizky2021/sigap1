@@ -13,18 +13,13 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@drawable/icons"
-<<<<<<< HEAD
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
        >
-=======
-        android:layout_marginTop="180dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
->>>>>>> b239504a58ce54ab932322c59705f19a37a35096
+
 
     </ImageView>
 
