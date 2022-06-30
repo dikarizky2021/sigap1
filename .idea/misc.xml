@@ -7,17 +7,17 @@
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/drawable/shape.xml" value="0.1375" />
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/drawable/shape2.xml" value="0.1425" />
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/drawable/shape_btl.xml" value="0.1375" />
-        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_dashboard.xml" value="0.1796875" />
-        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_detail.xml" value="0.22" />
+        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_form.xml" value="0.25" />
-        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/activity_splash_screen.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/user34/AndroidStudioProjects/Sigap/app/src/main/res/layout/item_riwayat.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_form.xml" value="0.8225806451612904" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_detail_dua.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_form.xml" value="0.24478523500504032" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/item_riwayat.xml" value="0.375" />
       </map>
     </option>
   </component>

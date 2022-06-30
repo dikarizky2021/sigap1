@@ -15,48 +15,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
+        android:id="@+id/layout_item"
         >
 
         <TextView
             android:id="@+id/nama_pelanggar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="2dp"
             android:layout_marginTop="8dp"
             android:textStyle="bold"
             android:textSize="14sp"
-            android:text="Nama Pelanggar"
+            android:text="Jenis Pelanggaran"
             android:textColor="@color/black">
         </TextView>
         <TextView
             android:id="@+id/tgl"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="270dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
+            android:layout_alignParentRight="true"
             android:textStyle="bold"
             android:textSize="10sp"
-            android:text="03-09-2022"
+            android:text="03 Februari 2022"
             android:textColor="@color/grey">
         </TextView>
+
         <TextView
-            android:id="@+id/NIK"
-            android:layout_width="match_parent"
+            android:id="@+id/detail_pelanggaran"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/nama_pelanggar"
+            android:layout_marginLeft="16dp"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="Detail Pelanggaran"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/lokasi_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detail_pelanggaran"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:ellipsize="end"
             android:maxLines="5"
-            android:textStyle="bold"
-            android:textSize="10sp"
-            android:text="NIK"
-            android:textColor="@color/black">
-        </TextView>
+            android:text="Detail Lokasi"
+            android:textColor="@color/grey"
+            android:textSize="8sp"
+            android:textStyle="bold"></TextView>
+
+
 
 
 
