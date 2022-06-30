@@ -5,13 +5,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/bg">
+    android:background="@color/bg" android:padding="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        
+
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/btn_back"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             app:navigationIcon="@drawable/previous"
@@ -22,21 +23,21 @@
             android:layout_marginTop="10dp"
             >
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/kembali"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kembali"
                 android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/black"
-                android:layout_marginRight="100dp"
-                android:textSize="18dp"
+                android:textSize="20dp"
+                android:layout_marginTop="13dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent">
 
             </TextView>
 
         </androidx.appcompat.widget.Toolbar>
-        
+
         <TextView
             android:id="@+id/text_form"
             android:layout_width="match_parent"
@@ -49,8 +50,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
             android:textColor="@color/black"></TextView>
 
         <ImageButton
@@ -60,14 +61,15 @@
             android:background="@drawable/shape_btl"
             app:layout_constraintTop_toBottomOf="@id/text_form"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginBottom="12dp">
 
         </ImageButton>
 
         <EditText
             android:id="@+id/NIK"
-            android:layout_width="380dp"
+            android:layout_width="360dp"
             android:layout_height="45dp"
             android:inputType="text"
             android:hint="NIK Pelanggar"
@@ -79,14 +81,14 @@
             app:layout_constraintTop_toBottomOf="@id/garis"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp">
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp">
 
         </EditText>
 
         <EditText
             android:id="@+id/Nama"
-            android:layout_width="380dp"
+            android:layout_width="360dp"
             android:layout_height="45dp"
             android:hint="Nama Pelanggar"
             android:background="@drawable/custom_input"
@@ -98,26 +100,27 @@
             app:layout_constraintTop_toBottomOf="@id/NIK"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp">
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            >
 
         </EditText>
 
         <Spinner
             android:id="@+id/jenis_pelanggaran"
-            android:layout_width="380dp"
+            android:layout_width="360dp"
             android:layout_height="45dp"
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/Nama"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
              />
 
         <Spinner
             android:id="@+id/detail_pelanggaran"
-            android:layout_width="380dp"
+            android:layout_width="360dp"
             android:layout_height="45dp"
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/jenis_pelanggaran"
@@ -128,7 +131,7 @@
 
         <Spinner
             android:id="@+id/tindakan_petugas"
-            android:layout_width="380dp"
+            android:layout_width="360dp"
             android:layout_height="45dp"
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/detail_pelanggaran"
@@ -139,7 +142,7 @@
 
         <FrameLayout
             android:id="@+id/peta"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="150dp"
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/tindakan_petugas"
@@ -151,7 +154,7 @@
 
         <EditText
             android:id="@+id/detail_lokasi"
-            android:layout_width="380dp"
+            android:layout_width="360dp"
             android:layout_height="45dp"
             android:hint="Detail Lokasi"
             android:background="@drawable/custom_input"
@@ -170,7 +173,7 @@
 
         <FrameLayout
             android:id="@+id/kamera"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="150dp"
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/detail_lokasi"
@@ -188,7 +191,7 @@
         </FrameLayout>
         <Button
             android:id="@+id/btn_simpan"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/blue"
             android:text="Simpan"
@@ -201,11 +204,10 @@
             ></Button>
         <Button
             android:id="@+id/btn_batal"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/grey"
             android:text="Batal"
-            android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/btn_simpan"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

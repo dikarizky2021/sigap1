@@ -19,13 +19,13 @@
 
         <activity
             android:name=".SplashScreen"
-            android:exported="true"
+            android:exported="false"
             android:label="sigap">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
 
         </activity>
         <activity
@@ -33,18 +33,24 @@
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.Sigap1.NoActionBar" >
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                        <intent-filter>-->
+<!--                            <action android:name="android.intent.action.MAIN" />-->
 
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
+<!--                            <category android:name="android.intent.category.LAUNCHER" />-->
+<!--                        </intent-filter>-->
         </activity>
 
         <activity
             android:name=".DashboardActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login"
+            android:exported="true"
+            android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.Sigap1.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
         <activity
             android:name=".FormActivity"
@@ -56,7 +62,10 @@
 
         <activity
             android:name=".DetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Sigap1.NoActionBar" >
+
+        </activity>
     </application>
 
 </manifest>

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity"
-    android:background="@color/bg">
+    android:background="@color/bg"
+    >
 
     <ImageButton
         android:id="@+id/bg"
@@ -121,18 +122,19 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvRiwayat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="350dp"
+                tools:listitem="@layout/item_riwayat"
                 android:background="@color/white">
 
             </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
+        </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
     <TextView
         android:id="@+id/judul"
@@ -151,17 +153,17 @@
 
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:textSize="4pt"
-        android:text="Sistem Informasi Penegakan PERDA \n Perkada Humanis Tegap Berwibawa \n Kab. Mojokerto "
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/poppins_semibold"-->
+<!--        android:textSize="4pt"-->
+<!--        android:text="Sistem Informasi Penegakan PERDA \n Perkada Humanis Tegap Berwibawa \n Kab. Mojokerto "-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
 
-    </TextView>
+<!--    </TextView>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
