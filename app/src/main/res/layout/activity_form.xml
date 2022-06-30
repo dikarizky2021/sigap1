@@ -57,7 +57,7 @@
             android:id="@+id/garis"
             android:layout_width="167dp"
             android:layout_height="9dp"
-            android:background="@drawable/shape"
+            android:background="@drawable/shape_btl"
             app:layout_constraintTop_toBottomOf="@id/text_form"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="15dp"
