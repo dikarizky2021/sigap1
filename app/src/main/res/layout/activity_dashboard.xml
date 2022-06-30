@@ -9,7 +9,7 @@
     >
 
     <LinearLayout
-        android:id="@+id/bg"
+        android:id="@+id/dbbg"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:background="@drawable/shape"
@@ -21,7 +21,7 @@
 
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/dblogo"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
@@ -33,7 +33,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/logout"
+        android:id="@+id/dblogout"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
@@ -45,7 +45,7 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/nama_user"
+        android:id="@+id/dbnama_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hallo, Roy !"
@@ -56,13 +56,10 @@
         android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/dblogo"
 
         >
     </TextView>
-
-
-
 
 
         <Button
@@ -86,7 +83,7 @@
         </Button>
 
     <TextView
-        android:id="@+id/judul"
+        android:id="@+id/dbjudul"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Riwayat"

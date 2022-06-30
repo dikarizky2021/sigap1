@@ -19,13 +19,13 @@
 
         <activity
             android:name=".SplashScreen"
-            android:exported="false"
+            android:exported="true"
             android:label="sigap">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+           <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
@@ -45,11 +45,7 @@
             android:exported="true"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.Sigap1.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
