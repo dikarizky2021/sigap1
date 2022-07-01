@@ -11,7 +11,7 @@
         android:orientation="horizontal">
         <ImageButton
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/previous"
@@ -20,7 +20,7 @@
 
         <TextView
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kembali"
@@ -31,7 +31,7 @@
     </LinearLayout>
     <TextView
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:id="@+id/text_form"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:layout_width="167dp"
         android:layout_height="9dp"
         android:background="@drawable/shape_btl"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         />
 
     <LinearLayout
@@ -54,22 +54,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
             android:id="@+id/judul_nik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="14sp"
-            android:text="NIK "
+            android:text="NIK"
             android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/grey"
+            android:textColor="@color/grey_text"
             android:layout_weight="1"
           >
         </TextView>
 
         <TextView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="2"
             android:id="@+id/NIK"
@@ -78,7 +78,240 @@
             android:textStyle="bold"
             android:textSize="14sp"
             android:fontFamily="@font/poppins_semibold"
-            android:text=": 35250606099970004 "
+            android:text=": 35250606099970004"
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/judul_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Nama Pelanggar"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/grey_text"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:id="@+id/isi_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text=": Roy Achmad Aziz"
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/judul_jenis_pelanggaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Jenis Pelanggaran"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/grey_text"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:id="@+id/isi_jenis_pelanggaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text=": Pelanggaran HAM"
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/judul_detail_pelanggaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Detail Pelanggaran"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/grey_text"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:id="@+id/isi_detail_pelanggaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text=": Pasal 14A "
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/judul_tindakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Tindakan Petugas"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/grey_text"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:id="@+id/isi_tindakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text=": Teguran Pertama "
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/judul_detail_lokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Detail Lokasi"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/grey_text"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:id="@+id/isi_detail_lokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text=": Jalan Gajahmada Depan Masjid "
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/judul_dokumentasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Dokumentasi"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/grey_text"
+            android:layout_weight="1"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:id="@+id/isi_dokumentasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text=": "
             android:textColor="@color/black"
             >
         </TextView>

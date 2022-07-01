@@ -6,9 +6,10 @@
         android:bottomRightRadius="10dp"
         android:radius="4dp"
         android:topLeftRadius="1dp"
-        android:topRightRadius="1dp"/>
-    <solid
-        android:color="#0D0D8C"/>
+        android:topRightRadius="1dp"
+        />
+<!--    <solid-->
+<!--        android:color="#0D0D8C"/>-->
     <size
         android:height="60dp"
         android:width="170dp"/>
