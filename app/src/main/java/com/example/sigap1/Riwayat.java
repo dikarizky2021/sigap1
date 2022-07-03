@@ -1,27 +1,49 @@
 package com.example.sigap1;
 
 public class Riwayat {
-    private String nama;
-    private String nik;
+    private String jenis;
+    private String detail;
+    private String lokasi;
+    private String tanggal;
 
-    public Riwayat(String nama, String nik) {
-        this.nama = nama;
-        this.nik = nik;
+    public Riwayat(String jenis, String detail, String lokasi, String tanggal) {
+        this.jenis = jenis;
+        this.detail = detail;
+        this.lokasi = lokasi;
+        this.tanggal = tanggal;
     }
 
-    public String getNama() {
-        return nama;
+    public String getJenis() {
+        return jenis;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
     }
 
-    public String getNik() {
-        return nik;
+    public String getDetail() {
+        return detail;
     }
 
-    public void setNik(String nik) {
-        this.nik = nik;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
+
+    public String getLokasi() {
+        return lokasi;
+    }
+
+    public void setLokasi(String lokasi) {
+        this.lokasi = lokasi;
+    }
+
+    public String getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
+    }
+
+
 }

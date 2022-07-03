@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:layout_marginTop="4dp"
@@ -19,7 +19,7 @@
         >
 
         <TextView
-            android:id="@+id/nama_pelanggar"
+            android:id="@+id/rw_nama_pelanggar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -31,7 +31,7 @@
             android:textColor="@color/black">
         </TextView>
         <TextView
-            android:id="@+id/tgl"
+            android:id="@+id/rw_tgl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
@@ -45,10 +45,10 @@
         </TextView>
 
         <TextView
-            android:id="@+id/detail_pelanggaran"
+            android:id="@+id/rw_detail_pelanggaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nama_pelanggar"
+            android:layout_below="@id/rw_nama_pelanggar"
             android:layout_marginLeft="16dp"
             android:ellipsize="end"
             android:maxLines="5"
@@ -58,10 +58,10 @@
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/lokasi_view"
+            android:id="@+id/rw_lokasi_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/detail_pelanggaran"
+            android:layout_below="@id/rw_detail_pelanggaran"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:ellipsize="end"

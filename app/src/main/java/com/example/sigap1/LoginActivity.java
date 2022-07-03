@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 progressBar.setVisibility(View.GONE);
-                Toast. makeText(getApplicationContext(),"Post",Toast. LENGTH_SHORT).show();
+                //Toast. makeText(getApplicationContext(),"Post",Toast. LENGTH_SHORT).show();
 
 
                 try {

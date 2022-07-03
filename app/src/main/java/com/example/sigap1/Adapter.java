@@ -12,12 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 class holder extends RecyclerView.ViewHolder{
-    TextView txtnama, txtnik;
+    TextView jenis, detail, lokasi, tanggal;
 
     public holder(@NonNull View itemView) {
         super(itemView);
-        txtnama = itemView.findViewById(R.id.nama_pelanggar);
-        txtnik = itemView.findViewById(R.id.NIK);
+        jenis= itemView.findViewById(R.id.rw_nama_pelanggar);
+        detail = itemView.findViewById(R.id.rw_detail_pelanggaran);
+        lokasi = itemView.findViewById(R.id.rw_lokasi_view);
+        tanggal = itemView.findViewById(R.id.rw_tgl);
     }
 }
 public class Adapter extends RecyclerView.Adapter<holder> {
@@ -41,8 +43,10 @@ public class Adapter extends RecyclerView.Adapter<holder> {
     public void onBindViewHolder(@NonNull holder holder, int position) {
         Riwayat riwayat = listRiwayat.get(position);
 
-        holder.txtnama.setText(riwayat.getNama());
-        holder.txtnik.setText(riwayat.getNik());
+        holder.jenis.setText(riwayat.getJenis());
+        holder.detail.setText(riwayat.getDetail());
+        holder.lokasi.setText(riwayat.getLokasi());
+        holder.tanggal.setText(riwayat.getTanggal());
 
 
     }
