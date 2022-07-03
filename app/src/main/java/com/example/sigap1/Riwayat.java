@@ -5,12 +5,14 @@ public class Riwayat {
     private String detail;
     private String lokasi;
     private String tanggal;
+    private String id;
 
-    public Riwayat(String jenis, String detail, String lokasi, String tanggal) {
+    public Riwayat(String jenis, String detail, String lokasi, String tanggal, String id) {
         this.jenis = jenis;
         this.detail = detail;
         this.lokasi = lokasi;
         this.tanggal = tanggal;
+        this.id=id;
     }
 
     public String getJenis() {
@@ -45,5 +47,11 @@ public class Riwayat {
         this.tanggal = tanggal;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 }

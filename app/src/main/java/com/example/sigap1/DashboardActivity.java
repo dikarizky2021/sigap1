@@ -32,7 +32,7 @@ public class DashboardActivity extends AppCompatActivity {
     void dataDummy(){
 
         this.listRiwayat= new ArrayList<>();
-        listRiwayat.add(new Riwayat("Pelanggaran2","Trotoar","Malang","22 Februari 2022"));
+        //listRiwayat.add(new Riwayat("Pelanggaran2","Trotoar","Malang","22 Februari 2022"));
 
 //
 //        listRiwayat.add(new Riwayat("Pelanggaran2","Trotoar","Malang","22 Februari 2022"));
@@ -74,7 +74,8 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Perintah Intent Explicit pindah halaman ke activity_detail
-                finish();
+              //
+                //  finish();
               startActivity(new Intent(DashboardActivity.this, FormActivity.class));
             }
         });
@@ -119,7 +120,7 @@ public class DashboardActivity extends AppCompatActivity {
                          if (jArray != null) {
                             for (int i=0;i<jArray.length();i++){
                                 JSONObject jObj= new JSONObject( jArray.getString(i));
-                                this.listRiwayatJson.add(new Riwayat(""+jObj.getString("jenis_pelanggaran"),""+jObj.getString("detail_pelanggaran") , ""+jObj.getString("detail_lokasi"),""+jObj.getString("waktu")));
+                                this.listRiwayatJson.add(new Riwayat(""+jObj.getString("jenis_pelanggaran"),""+jObj.getString("detail_pelanggaran") , ""+jObj.getString("detail_lokasi"),""+jObj.getString("waktu"),""+jObj.getString("id")));
                               //  System.out.println(jObj.getString("jenis_pelanggaran")+"-"+jObj.getString("detail_pelanggaran")+"-"+ jObj.getString("detail_lokasi")+"-"+jObj.getString("waktu"));
 
 

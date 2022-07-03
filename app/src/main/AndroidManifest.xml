@@ -20,7 +20,8 @@
         <activity
             android:name=".SplashScreen"
             android:exported="true"
-            android:label="sigap">
+            android:label="sigap"
+            android:screenOrientation="portrait">
            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +33,8 @@
             android:name=".LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Sigap1.NoActionBar" >
+            android:theme="@style/Theme.Sigap1.NoActionBar"
+            android:screenOrientation="portrait">
 <!--                        <intent-filter>-->
 <!--                            <action android:name="android.intent.action.MAIN" />-->
 
@@ -44,7 +46,8 @@
             android:name=".DashboardActivity"
             android:exported="true"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/Theme.Sigap1.NoActionBar">
+            android:theme="@style/Theme.Sigap1.NoActionBar"
+            android:screenOrientation="portrait">
 
 
         </activity>
@@ -52,14 +55,16 @@
             android:name=".FormActivity"
             android:exported="false"
             android:label="@string/title_activity_form"
-            android:theme="@style/Theme.Sigap1.NoActionBar">
+            android:theme="@style/Theme.Sigap1.NoActionBar"
+            android:screenOrientation="portrait">
 
         </activity>
 
         <activity
             android:name=".DetailActivity"
             android:exported="false"
-            android:theme="@style/Theme.Sigap1.NoActionBar" >
+            android:theme="@style/Theme.Sigap1.NoActionBar"
+            android:screenOrientation="portrait">
 
         </activity>
     </application>

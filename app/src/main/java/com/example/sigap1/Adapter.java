@@ -1,6 +1,7 @@
 package com.example.sigap1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 
 class holder extends RecyclerView.ViewHolder{
     TextView jenis, detail, lokasi, tanggal;
+    String id;
 
     public holder(@NonNull View itemView) {
         super(itemView);
@@ -47,6 +49,23 @@ public class Adapter extends RecyclerView.Adapter<holder> {
         holder.detail.setText(riwayat.getDetail());
         holder.lokasi.setText(riwayat.getLokasi());
         holder.tanggal.setText(riwayat.getTanggal());
+        holder.id=riwayat.getId();
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Mulai activity Detail
+                Intent varIntent = new Intent(context, DetailActivity.class);
+                // sisipkan data ke intent
+                varIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                varIntent.putExtra("id", holder.id);
+
+
+                // method startActivity cma bisa di pake di activity/fragment
+                // jadi harus masuk ke context dulu
+               context.startActivity(varIntent);
+            }
+        });
 
 
     }
