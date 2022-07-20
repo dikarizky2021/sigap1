@@ -40,6 +40,9 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
+        Bundle extras = getIntent().getExtras();
+        String id= extras.getString("id");
+
 
 
     }

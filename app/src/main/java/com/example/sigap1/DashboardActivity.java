@@ -5,11 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ public class DashboardActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     ArrayList<Riwayat> listRiwayat;
     TextView textViewId;
+    ImageView dbLogout;
 
     void dataDummy(){
 
@@ -84,6 +87,16 @@ public class DashboardActivity extends AppCompatActivity {
         User user = SharedPrefManager.getInstance(this).getUser();
         textViewId = (TextView) findViewById(R.id.dbnama_user);
         textViewId.setText("Hallo, "+user.getNama()+"!");
+
+        dbLogout = findViewById(R.id.dblogout);
+        dbLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                SharedPrefManager.getInstance(getApplicationContext()).logout();
+                startActivity(new Intent(DashboardActivity.this, LoginActivity.class));
+            }
+        });
 
 
     }

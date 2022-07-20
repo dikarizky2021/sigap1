@@ -64,17 +64,23 @@ import java.util.HashMap;
 //        GoogleApiClient.OnConnectionFailedListener, LocationListener {
 public class FormActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private String[] jenisItem = {"Jenis Pelanggaran 1", "Jenis Pelanggaran 2", "Jenis Pelanggaran 3"};
+    private String[] jenisItem = {"Ketertiban Umum dan Ketentraman Masyarakat"};
 
-    private String[] detailItem = {"Jenis Detail Pelanggaran 1", "Jenis Detail Pelanggaran 2", "Jenis Detail Pelanggaran 3"};
+    private String[] detailItem = {
+            "Menggunakan bahu jalan/ trotoar \n tidak sesuai dengan fungsinya",
+            "Berdagang di atas badan jalan/ trotoar/ \n bawah flyover/ halte/ jembatan penyeberangan orang/ \n tempat-tempat untuk kepentingan umum lainnya",
+            "Melakukan tindakan premanisme, pemungutan uang, \n mengelola/menjual lapak/tempat untuk berdagang di pasar,\n dan di jalan-jalan yang mengakibatkan keresahan, kesemerautan, tidak tertibnya lingkungan dan mengganggu lalu lintas",
+            "Menempatkan benda-benda untuk melakukan \n sesuatu usaha di jalan/ di pinggir rel kereta api/ \n jalur hijau/ di bawah flyover/ taman dan tempat-tempat umum",
+            "Menjajakan barang dagangan/ membagikan selebaran/ \n melakukan usaha-usaha tertentu dengan mengharapkan imbalan \n di jalan/ jalur hijau/ taman dan tempat-tempat umum" };
 
-    private String[] tindakanItem = {"Tindakan 1", "Tindakan 2", "Tindakan 3"};
+    private String[] tindakanItem = {"Pembinaan", "Penyidikan", "Pelaporan"};
 
     EditText editTextNIK, editTextNama, editTextDetailLokasi;
    Spinner ListJenis, ListTindakan, ListDetail;
     String vNIK,vNama,vDetailLokasi,vJenis, vDetail,vTindakan, vLat, vLong, vKec, vKel, vFot, vUsername;
     Bitmap imageAbsen;
     ImageView photoButton;
+    double lat, longi;
 
     private GoogleMap mMap;
 //    GoogleApiClient mGoogleApiClient;
@@ -173,15 +179,20 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         ListJenis = findViewById(R.id.jenis_pelanggaran);
         //Inisialiasi Array Adapter dengan memasukkan String Array
+       // final ArrayAdapter<String> adapterJenis = new ArrayAdapter<>(this,
+        //        android.R.layout.simple_spinner_dropdown_item, jenisItem);
         final ArrayAdapter<String> adapterJenis = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, jenisItem);
-        //Memasukan Adapter pada Spinner
+                        R.layout.textview_layout, jenisItem);
+        adapterJenis.setDropDownViewResource(R.layout.textview_layout);
         ListJenis.setAdapter(adapterJenis);
 
         ListDetail = findViewById(R.id.detail_pelanggaran);
         //Inisialiasi Array Adapter dengan memasukkan String Array
+       // final ArrayAdapter<String> adapterDetail = new ArrayAdapter<>(this,
+              //  android.R.layout.simple_spinner_dropdown_item, detailItem);
         final ArrayAdapter<String> adapterDetail = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, detailItem);
+                R.layout.textview_layout, detailItem);
+        adapterJenis.setDropDownViewResource(R.layout.textview_layout);
         //Memasukan Adapter pada Spinner
         ListDetail.setAdapter(adapterDetail);
 
@@ -404,8 +415,8 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(lat, longi);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Lokasi saat ini"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 ////
@@ -434,8 +445,8 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
         } else {
             Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (locationGPS != null) {
-                double lat = locationGPS.getLatitude();
-                double longi = locationGPS.getLongitude();
+                lat = locationGPS.getLatitude();
+                longi = locationGPS.getLongitude();
                 latitude = String.valueOf(lat);
                 longitude = String.valueOf(longi);
                 Toast.makeText(getApplicationContext(),   "Latitude: " + latitude + "\n" + "Longitude: " + longitude,Toast.LENGTH_LONG).show();
