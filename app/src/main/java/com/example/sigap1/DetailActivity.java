@@ -1,27 +1,35 @@
 package com.example.sigap1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.json.JSONArray;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity  {
 
 
-    ArrayList<Riwayat> listRiwayat;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,16 +68,17 @@ public class DetailActivity extends AppCompatActivity {
 
         //if everything is fine
 
-        class RiwayatList extends AsyncTask<Void, Void, String>  {
+        class RiwayatList extends AsyncTask<Void, Void, String> implements OnMapReadyCallback {
 
             String id;
             ArrayList<Riwayat> listRiwayatJson;
+            private GoogleMap mMap;
+            double lat, longi;
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
 
-                //  Toast. makeText(getApplicationContext(),"Get Post",Toast. LENGTH_SHORT).show();
 
 
                 try {
@@ -85,29 +94,35 @@ public class DetailActivity extends AppCompatActivity {
                        tanggal.setText(userJson.getString("waktu"));
 
                         TextView nik= findViewById(R.id.detail_nik);
-                        tanggal.setText(userJson.getString("nik"));
+                        nik.setText(userJson.getString("nik"));
 
                         TextView nama= findViewById(R.id.detail_nama);
-                        tanggal.setText(userJson.getString("nama"));
+                        nama.setText(userJson.getString("nama"));
 
                         TextView jenis= findViewById(R.id.isi_jenis_pelanggaran);
-                        tanggal.setText(userJson.getString("jenis"));
+                        jenis.setText(userJson.getString("jenis"));
 
                         TextView detail= findViewById(R.id.detail_detail_pelanggaran);
-                        tanggal.setText(userJson.getString("detail"));
+                        detail.setText(userJson.getString("detail"));
 
                         TextView lokasi= findViewById(R.id.isi_detail_lokasi);
-                        tanggal.setText(userJson.getString("lokasi"));
+                        lokasi.setText(userJson.getString("lokasi"));
 
 
+                      //  URL newurl = new URL(userJson.getString("foto"));
+                      //  Bitmap mIcon_val = BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
+                        ImageView dokumentasi = findViewById(R.id.dokumenatasi_foto);
+                        Picasso.with(getApplicationContext()).load(userJson.getString("foto")).into(dokumentasi);
+                       // dokumentasi.setImageBitmap(mIcon_val);
 
-                    userJson.getString("longi");
-                    userJson.getString("lati");
 
+                    this.longi=Double.parseDouble(userJson.getString("longi"));
+                    this.lat=Double.parseDouble(userJson.getString("lati"));
 
-                    userJson.getString("foto");
-
-
+//  Toast. makeText(getApplicationContext(),"Get Post",Toast. LENGTH_SHORT).show();
+                        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                                .findFragmentById(R.id.detail_map);
+                        mapFragment.getMapAsync(this);
 
 
 
@@ -115,7 +130,7 @@ public class DetailActivity extends AppCompatActivity {
                     } else {
                         //        Toast.makeText(getApplicationContext(), "Invalid data", Toast.LENGTH_SHORT).show();
                     }
-                } catch (JSONException e) {
+                } catch (JSONException  e) {
                     e.printStackTrace();
                     //    Toast. makeText(getApplicationContext(),e.toString(),Toast. LENGTH_SHORT).show();
 
@@ -139,6 +154,18 @@ public class DetailActivity extends AppCompatActivity {
                 //returing the response
                 return requestHandler.sendPostRequest(URLs.URL_DETAIL, params);
             }
+
+            @Override
+            public void onMapReady(GoogleMap googleMap) {
+                mMap = googleMap;
+
+                // Add a marker in Sydney and move the camera
+                LatLng sydney = new LatLng(this.lat, this.longi);
+                mMap.addMarker(new MarkerOptions().position(sydney).title("Lokasi pelanggaran"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(this.lat, this.longi), 12.0f));
+            }
+
         }
 
         RiwayatList rl = new RiwayatList();

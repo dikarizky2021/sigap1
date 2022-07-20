@@ -271,7 +271,7 @@
             >
         </TextView>
 
-    <ImageView
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="200dp"
 
@@ -280,7 +280,9 @@
         android:layout_marginTop="2dp"
         android:src="@drawable/map"
         android:scaleType="fitCenter"
-        ></ImageView>
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+android:id="@+id/detail_map"
+        ></fragment>
 
 
 

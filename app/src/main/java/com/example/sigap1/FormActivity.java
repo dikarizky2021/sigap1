@@ -11,37 +11,24 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.content.Context;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.provider.Settings;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,7 +38,6 @@ import android.app.AlertDialog;
 import android.location.LocationManager;
 import android.content.DialogInterface;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -77,10 +63,10 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     EditText editTextNIK, editTextNama, editTextDetailLokasi;
    Spinner ListJenis, ListTindakan, ListDetail;
-    String vNIK,vNama,vDetailLokasi,vJenis, vDetail,vTindakan, vLat, vLong, vKec, vKel, vFot, vUsername;
+    String vNIK="null",vNama="null",vDetailLokasi="null",vJenis="null", vDetail="null",vTindakan="null", vLong="112.5608739", vLat="-7.508251", vKec="null", vKel="null", vFot="null", vUsername="null";
     Bitmap imageAbsen;
     ImageView photoButton;
-    double lat, longi;
+    double lat=-7.508251, longi=112.5608739;
 
     private GoogleMap mMap;
 //    GoogleApiClient mGoogleApiClient;
@@ -269,8 +255,8 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
         vDetail=ListDetail.getSelectedItem().toString();
         vTindakan=ListTindakan.getSelectedItem().toString();
         vDetailLokasi=editTextDetailLokasi.getText().toString();
-        vLat=latitude;
-        vLong=longitude;
+        if(latitude!=null)vLat=latitude;
+        if(longitude!=null)vLong=longitude;
         vKec="Mojokerto";
         vKel="Mojokerto";
         User user = SharedPrefManager.getInstance(this).getUser();
@@ -418,6 +404,9 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng sydney = new LatLng(lat, longi);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Lokasi saat ini"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(this.lat, this.longi), 12.0f));
+
+        // mMap.moveCamera(CameraUpdateFactory.zoomBy(15));
     }
 ////
     private void OnGPS() {
