@@ -7,9 +7,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg" android:padding="10dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,14 +46,11 @@
             android:id="@+id/text_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Form \nPelaporan \nPelanggaran"
             android:textSize="10pt"
             android:lineSpacingExtra="-6dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp"
             android:textColor="@color/black"></TextView>
@@ -62,17 +60,15 @@
             android:layout_width="167dp"
             android:layout_height="9dp"
             android:background="@drawable/shape_btl"
-            app:layout_constraintTop_toBottomOf="@id/text_form"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginBottom="12dp">
+            >
 
         </ImageButton>
 
         <EditText
             android:id="@+id/NIK"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:inputType="text"
             android:hint="NIK Pelanggar"
@@ -80,31 +76,26 @@
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:textColor="@color/black"
-
+            android:textSize="12sp"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/garis"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="25dp"
+           android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp">
 
         </EditText>
 
         <EditText
             android:id="@+id/Nama"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:hint="Nama Pelanggar"
             android:background="@drawable/custom_input"
-
+            android:textSize="12sp"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:inputType="text"
             android:textColor="@color/black"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/NIK"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp"
             >
@@ -113,12 +104,10 @@
 
         <Spinner
             android:id="@+id/jenis_pelanggaran"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/Nama"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="10sp"
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp"
             android:background="@drawable/shape_spinner"
@@ -127,86 +116,71 @@
 
         <Spinner
             android:id="@+id/detail_pelanggaran"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/jenis_pelanggaran"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:textSize="10sp"
               android:background="@drawable/shape_spinner"
             />
 
         <Spinner
             android:id="@+id/tindakan_petugas"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/detail_pelanggaran"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+            android:textSize="10sp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
             android:background="@drawable/shape_spinner"/>
 
         <FrameLayout
             android:id="@+id/peta"
-            android:layout_width="360dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tindakan_petugas"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            ></FrameLayout>
-
-
-        <fragment
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:layout_constraintTop_toBottomOf="@id/tindakan_petugas"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="12dp"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-android:id="@+id/fragmentMap"
-            ></fragment>
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            >
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+
+
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:id="@+id/fragmentMap"
+                ></fragment>
+
+        </FrameLayout>
+
+
 
         <EditText
             android:id="@+id/detail_lokasi"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:hint="Detail Lokasi"
             android:background="@drawable/custom_input"
-
+            android:textSize="12sp"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:inputType="text"
             android:textColor="@color/black"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/peta"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp">
+
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp">
 
         </EditText>
 
         <FrameLayout
             android:id="@+id/kamera"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/detail_lokasi"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+             android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
             >
             <ImageView
                 android:layout_width="match_parent"
@@ -219,35 +193,31 @@ android:id="@+id/fragmentMap"
         </FrameLayout>
         <Button
             android:id="@+id/btn_simpan"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
             android:backgroundTint="@color/blue"
             android:text="Simpan"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/kamera"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
             ></Button>
         <Button
             android:id="@+id/btn_batal"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
             android:backgroundTint="@color/grey"
             android:text="Batal"
-            app:layout_constraintTop_toBottomOf="@id/btn_simpan"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="25dp"
             ></Button>
 
 
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </ScrollView>
