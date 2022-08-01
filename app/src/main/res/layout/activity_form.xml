@@ -198,9 +198,9 @@
             android:backgroundTint="@color/blue"
             android:text="Simpan"
             android:layout_marginTop="12dp"
-
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp"
+            android:textColor="@color/white"
             ></Button>
         <Button
             android:id="@+id/btn_batal"
@@ -211,6 +211,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginBottom="25dp"
+            android:textColor="@color/white"
             ></Button>
 
 

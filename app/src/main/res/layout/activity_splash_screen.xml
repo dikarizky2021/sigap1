@@ -32,6 +32,7 @@
         android:textColor="@color/white"
         android:text="Sistem Informasi Penegakan PERDA \n Perkada Humanis Tegap Berwibawa \n Kab. Mojokerto "
         android:textAlignment="center"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 

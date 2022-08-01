@@ -12,7 +12,7 @@
         <ImageButton
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="20dp"
+            android:layout_width="15dp"
             android:layout_height="20dp"
             android:src="@drawable/previous"
             android:background="@color/bg"
@@ -66,7 +66,6 @@
         <TextView
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-
             android:id="@+id/waktu_pelanggaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,10 +82,9 @@
             android:id="@+id/detail_judul_nik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="14sp"
             android:text="NIK"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/grey_text"
 
           >
@@ -112,10 +110,9 @@
             android:id="@+id/detail_judul_nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="14sp"
             android:text="Nama Pelanggar"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/grey_text"
 
             >
@@ -144,10 +141,9 @@
             android:id="@+id/judul_jenis_pelanggaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="14sp"
             android:text="Jenis Pelanggaran"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/grey_text"
 
             >
@@ -179,10 +175,9 @@
             android:id="@+id/judul_detail_pelanggaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="14sp"
             android:text="Detail Pelanggaran"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/grey_text"
 
             >
@@ -191,7 +186,6 @@
         <TextView
             android:layout_marginTop="2dp"
             android:layout_marginLeft="20dp"
-
             android:id="@+id/detail_detail_pelanggaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -214,10 +208,9 @@
             android:id="@+id/judul_tindakan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="14sp"
             android:text="Tindakan Petugas"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/grey_text"
 
             >
@@ -247,10 +240,9 @@
             android:id="@+id/judul_detail_lokasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="14sp"
             android:text="Detail Lokasi"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/grey_text"
 
             >

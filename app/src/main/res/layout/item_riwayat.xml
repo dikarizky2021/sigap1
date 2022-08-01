@@ -20,7 +20,6 @@
         >
         <TextView
             android:id="@+id/rw_tgl"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
@@ -29,7 +28,7 @@
             android:textStyle="bold"
             android:textSize="8sp"
             android:text="03 Februari 2022"
-            android:textColor="@color/grey">
+            android:textColor="@color/bluep">
         </TextView>
         <TextView
             android:id="@+id/rw_lokasi_view"
