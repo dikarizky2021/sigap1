@@ -39,10 +39,12 @@ import android.location.LocationManager;
 import android.content.DialogInterface;
 import androidx.core.app.ActivityCompat;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 //
@@ -50,19 +52,23 @@ import java.util.HashMap;
 //        GoogleApiClient.OnConnectionFailedListener, LocationListener {
 public class FormActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private String[] jenisItem = {"Ketertiban Umum dan Ketentraman Masyarakat"};
-
-    private String[] detailItem = {
-            "Menggunakan bahu jalan/ trotoar \n tidak sesuai dengan fungsinya",
-            "Berdagang di atas badan jalan/ trotoar/ \n bawah flyover/ halte/ jembatan penyeberangan orang/ \n tempat-tempat untuk kepentingan umum lainnya",
-            "Melakukan tindakan premanisme, pemungutan uang, \n mengelola/menjual lapak/tempat untuk berdagang di pasar,\n dan di jalan-jalan yang mengakibatkan keresahan, kesemerautan, tidak tertibnya lingkungan dan mengganggu lalu lintas",
-            "Menempatkan benda-benda untuk melakukan \n sesuatu usaha di jalan/ di pinggir rel kereta api/ \n jalur hijau/ di bawah flyover/ taman dan tempat-tempat umum",
-            "Menjajakan barang dagangan/ membagikan selebaran/ \n melakukan usaha-usaha tertentu dengan mengharapkan imbalan \n di jalan/ jalur hijau/ taman dan tempat-tempat umum" };
-
-    private String[] tindakanItem = {"Pembinaan", "Penyidikan", "Pelaporan"};
+//    private String[] jenisItem = {"Ketertiban Umum dan Ketentraman Masyarakat"};
+//
+//    private String[] detailItem = {
+//            "Menggunakan bahu jalan/ trotoar tidak sesuai dengan fungsinya",
+//            "Berdagang di atas badan jalan/ trotoar/ bawah flyover/ halte/ jembatan penyeberangan orang/ tempat-tempat untuk kepentingan umum lainnya",
+//            "Melakukan tindakan premanisme, pemungutan uang, mengelola/menjual lapak/tempat untuk berdagang di pasar, dan di jalan-jalan yang mengakibatkan keresahan, kesemerautan, tidak tertibnya lingkungan dan mengganggu lalu lintas",
+//            "Menempatkan benda-benda untuk melakukan sesuatu usaha di jalan/ di pinggir rel kereta api/ jalur hijau/ di bawah flyover/ taman dan tempat-tempat umum",
+//            "Menjajakan barang dagangan/ membagikan selebaran/ melakukan usaha-usaha tertentu dengan mengharapkan imbalan di jalan/ jalur hijau/ taman dan tempat-tempat umum" };
+//
+//    private String[] tindakanItem = {"Pembinaan", "Penyidikan", "Pelaporan"};
+ArrayList<ArrayList> Item=new ArrayList<ArrayList>();
+    ArrayList<String> jenisItem=new ArrayList<String>();
+    ArrayList<String> detailItem=new ArrayList<String>();
+    ArrayList<String> tindakanItem=new ArrayList<String>();
 
     EditText editTextNIK, editTextNama, editTextDetailLokasi;
-   Spinner ListJenis, ListTindakan, ListDetail;
+    Spinner ListJenis, ListTindakan, ListDetail;
     String vNIK="null",vNama="null",vDetailLokasi="null",vJenis="null", vDetail="null",vTindakan="null", vLong="112.5608739", vLat="-7.508251", vKec="null", vKel="null", vFot="null", vUsername="null";
     Bitmap imageAbsen;
     ImageView photoButton;
@@ -163,31 +169,35 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        this.jenisItem.add("Jenis Pelanggaran");
+        this.detailItem.add("Detail Pelanggaran");
+        this.tindakanItem.add("Tindakan");
+
+        Item=riwayatList();
+        System.out.println("panjang: "+Item.size());
+//        jenisItem=Item.get(0);
+//        detailItem=Item.get(1);
+//        tindakanItem=Item.get(2);
+
+
+
         ListJenis = findViewById(R.id.jenis_pelanggaran);
-        //Inisialiasi Array Adapter dengan memasukkan String Array
-       // final ArrayAdapter<String> adapterJenis = new ArrayAdapter<>(this,
-        //        android.R.layout.simple_spinner_dropdown_item, jenisItem);
         final ArrayAdapter<String> adapterJenis = new ArrayAdapter<>(this,
                         R.layout.textview_layout, jenisItem);
         adapterJenis.setDropDownViewResource(R.layout.textview_layout);
         ListJenis.setAdapter(adapterJenis);
 
         ListDetail = findViewById(R.id.detail_pelanggaran);
-        //Inisialiasi Array Adapter dengan memasukkan String Array
-       // final ArrayAdapter<String> adapterDetail = new ArrayAdapter<>(this,
-              //  android.R.layout.simple_spinner_dropdown_item, detailItem);
         final ArrayAdapter<String> adapterDetail = new ArrayAdapter<>(this,
                 R.layout.textview_layout, detailItem);
         adapterJenis.setDropDownViewResource(R.layout.textview_layout);
-        //Memasukan Adapter pada Spinner
         ListDetail.setAdapter(adapterDetail);
 
         ListTindakan = findViewById(R.id.tindakan_petugas);
-        //Inisialiasi Array Adapter dengan memasukkan String Array
         final ArrayAdapter<String> adapterTindakan = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, tindakanItem);
-        //Memasukan Adapter pada Spinner
+                R.layout.textview_layout, tindakanItem);
         ListTindakan.setAdapter(adapterTindakan);
+
 
         //-------------------------------------
         this.photoButton = (ImageView) this.findViewById(R.id.imageFoto);
@@ -198,39 +208,7 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        //---------------------------------------------------------
-//        this.mFusedLocation = LocationServices.getFusedLocationProviderClient(this);
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
-//                    locationRequestCode);
-//            Toast.makeText(getApplicationContext(),"toast granted",Toast.LENGTH_LONG).show();
-//            return;
-//        } else {
-//
-//            Toast.makeText(getApplicationContext(),"toast else granted",Toast.LENGTH_LONG).show();
-//        }
-//
-//
-//        this.mFusedLocation.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
-//            @Override
-//            public void onSuccess(Location location) {
-//                if (location != null) {
-//                    // Do it all with location
-//                    Log.d("My Current location", "Lat : " + location.getLatitude() + " Long : " + location.getLongitude());
-//                    // Display in Toast
-//                    System.out.println("Lat : " + location.getLatitude());
-//                    Toast.makeText(getApplicationContext(),
-//                            "Lat : " + location.getLatitude() + " Long : " + location.getLongitude(),
-//                            Toast.LENGTH_LONG).show();
-//
-//
-//                } else {
-//                    Toast.makeText(getApplicationContext(), "lokasi gagal", Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        });
-        //-------------------
-//
+
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             OnGPS();
@@ -263,11 +241,7 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
         vUsername=user.getUsername();
         vFot="0";
 
-//        if (TextUtils.isEmpty(vNIK)) {
-//            editTextNIK.setError("Masukkan NIK terlebih dahulu");
-//            editTextNIK.requestFocus();
-//            return;
-//        }
+
 
         if (TextUtils.isEmpty(vNama)) {
             editTextNama.setError("Masukkan Nama Pelanggar terlebih dahulu");
@@ -298,13 +272,7 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
       //  image.setImageBitmap(bmp);
         this.vFot= Base64.encodeToString(imageBytes0, Base64.DEFAULT);
 
-        //----------------------
 
-//        String tes=""+vFot+" "+vUsername+" "+vDetailLokasi+" "+vDetail+" "+vLat;
-//        Toast.makeText(getApplicationContext(),tes,Toast.LENGTH_LONG).show();
-//        System.out.println(tes);
-
-        //if it passes all the validations
 
         class RegisterUser extends AsyncTask<Void, Void, String> {
 
@@ -443,6 +411,102 @@ public class FormActivity extends AppCompatActivity implements OnMapReadyCallbac
                 Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private ArrayList<ArrayList> riwayatList() {
+
+
+        class RiwayatList extends AsyncTask<Void, Void, String> {
+
+            ArrayList<ArrayList> Item=new ArrayList<ArrayList>();
+
+            public ArrayList<ArrayList> getItem(){
+                return Item;
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+
+
+
+
+
+                try {
+                    //converting response to json object
+                    JSONObject obj = new JSONObject(s);
+
+
+                    //if no error in response
+                    if (!obj.getBoolean("error")) {
+
+
+
+
+
+                        JSONArray jArray = obj.getJSONArray("jenis");
+                        if (jArray != null) {
+                            for (int i=0;i<jArray.length();i++){
+                                JSONObject jObj= new JSONObject( jArray.getString(i));
+                                jenisItem.add(jObj.getString("jenis_pelanggaran"));
+                            }
+                            }
+                        Item.add(jenisItem);
+
+                       jArray = obj.getJSONArray("sub");
+                        if (jArray != null) {
+                            for (int i=0;i<jArray.length();i++){
+                                JSONObject jObj= new JSONObject( jArray.getString(i));
+                                detailItem.add(jObj.getString("sub_pelanggaran"));
+                            }
+                        }
+                        Item.add(detailItem);
+//
+//
+                        jArray = obj.getJSONArray("tindakan");
+                        if (jArray != null) {
+                            for (int i=0;i<jArray.length();i++){
+                                JSONObject jObj= new JSONObject( jArray.getString(i));
+                               tindakanItem.add(jObj.getString("tindakan"));
+                            }
+                        }
+                        Item.add(tindakanItem);
+
+
+
+
+
+                    } else {
+                                Toast.makeText(getApplicationContext(), "Invalid data", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    //    Toast. makeText(getApplicationContext(),e.toString(),Toast. LENGTH_SHORT).show();
+
+                }
+
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                //creating request handler object
+                RequestHandler requestHandler = new RequestHandler();
+
+                //creating request parameters
+                HashMap<String, String> params = new HashMap<>();
+                params.put("username", "username");
+
+
+                //returing the response
+                return requestHandler.sendPostRequest(URLs.URL_FORM,params);
+
+            }
+        }
+
+        RiwayatList rl = new RiwayatList();
+        rl.execute();
+
+        return rl.getItem();
     }
 //
 //    private void buildGoogleApiClient() {

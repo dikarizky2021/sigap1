@@ -108,6 +108,9 @@ public class DetailActivity extends AppCompatActivity  {
                         TextView lokasi= findViewById(R.id.isi_detail_lokasi);
                         lokasi.setText(userJson.getString("lokasi"));
 
+                        TextView tindakan= findViewById(R.id.isi_tindakan);
+                        tindakan.setText(userJson.getString("tindakan"));
+
 
                       //  URL newurl = new URL(userJson.getString("foto"));
                       //  Bitmap mIcon_val = BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
