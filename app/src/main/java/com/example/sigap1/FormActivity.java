@@ -66,9 +66,10 @@ ArrayList<ArrayList> Item=new ArrayList<ArrayList>();
     ArrayList<String> jenisItem=new ArrayList<String>();
     ArrayList<String> detailItem=new ArrayList<String>();
     ArrayList<String> tindakanItem=new ArrayList<String>();
+    ArrayList<String> kecamatanItem=new ArrayList<String>();
 
     EditText editTextNIK, editTextNama, editTextDetailLokasi;
-    Spinner ListJenis, ListTindakan, ListDetail;
+    Spinner ListJenis, ListTindakan, ListDetail, ListKecamatan;
     String vNIK="null",vNama="null",vDetailLokasi="null",vJenis="null", vDetail="null",vTindakan="null", vLong="112.5608739", vLat="-7.508251", vKec="null", vKel="null", vFot="null", vUsername="null";
     Bitmap imageAbsen;
     ImageView photoButton;
@@ -172,9 +173,10 @@ ArrayList<ArrayList> Item=new ArrayList<ArrayList>();
         this.jenisItem.add("Jenis Pelanggaran");
         this.detailItem.add("Detail Pelanggaran");
         this.tindakanItem.add("Tindakan");
+        this.kecamatanItem.add("Kecamatan");
 
         Item=riwayatList();
-        System.out.println("panjang: "+Item.size());
+       // System.out.println("panjang: "+Item.size());
 //        jenisItem=Item.get(0);
 //        detailItem=Item.get(1);
 //        tindakanItem=Item.get(2);
@@ -197,6 +199,11 @@ ArrayList<ArrayList> Item=new ArrayList<ArrayList>();
         final ArrayAdapter<String> adapterTindakan = new ArrayAdapter<>(this,
                 R.layout.textview_layout, tindakanItem);
         ListTindakan.setAdapter(adapterTindakan);
+
+        ListKecamatan = findViewById(R.id.spin_kecamatan);
+        final ArrayAdapter<String> adapterKecamatan = new ArrayAdapter<>(this,
+                R.layout.textview_layout, kecamatanItem);
+        ListKecamatan.setAdapter(adapterKecamatan);
 
 
         //-------------------------------------
@@ -235,7 +242,7 @@ ArrayList<ArrayList> Item=new ArrayList<ArrayList>();
         vDetailLokasi=editTextDetailLokasi.getText().toString();
         if(latitude!=null)vLat=latitude;
         if(longitude!=null)vLong=longitude;
-        vKec="Mojokerto";
+        vKec=ListKecamatan.getSelectedItem().toString();
         vKel="Mojokerto";
         User user = SharedPrefManager.getInstance(this).getUser();
         vUsername=user.getUsername();
@@ -471,6 +478,15 @@ ArrayList<ArrayList> Item=new ArrayList<ArrayList>();
                             }
                         }
                         Item.add(tindakanItem);
+
+                        jArray = obj.getJSONArray("kecamatan");
+                        if (jArray != null) {
+                            for (int i=0;i<jArray.length();i++){
+                                JSONObject jObj= new JSONObject( jArray.getString(i));
+                                kecamatanItem.add(jObj.getString("nama"));
+                            }
+                        }
+                        Item.add(kecamatanItem);
 
 
 

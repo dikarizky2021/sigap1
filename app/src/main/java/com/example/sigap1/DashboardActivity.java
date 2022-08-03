@@ -129,7 +129,7 @@ public class DashboardActivity extends AppCompatActivity {
                          if (jArray != null) {
                             for (int i=0;i<jArray.length();i++){
                                 JSONObject jObj= new JSONObject( jArray.getString(i));
-                                this.listRiwayatJson.add(new Riwayat(""+jObj.getString("jenis_pelanggaran"),""+jObj.getString("detail_pelanggaran") , ""+jObj.getString("detail_lokasi"),""+jObj.getString("waktu"),""+jObj.getString("id")));
+                                this.listRiwayatJson.add(new Riwayat(""+jObj.getString("jenis_pelanggaran"),""+jObj.getString("detail_pelanggaran") , ""+jObj.getString("kecamatan"),""+jObj.getString("waktu"),""+jObj.getString("id")));
                               //  System.out.println(jObj.getString("jenis_pelanggaran")+"-"+jObj.getString("detail_pelanggaran")+"-"+ jObj.getString("detail_lokasi")+"-"+jObj.getString("waktu"));
 
 

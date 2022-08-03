@@ -106,7 +106,7 @@ public class DetailActivity extends AppCompatActivity  {
                         detail.setText(userJson.getString("detail"));
 
                         TextView lokasi= findViewById(R.id.isi_detail_lokasi);
-                        lokasi.setText(userJson.getString("lokasi"));
+                        lokasi.setText(userJson.getString("kecamatan")+", "+userJson.getString("lokasi"));
 
                         TextView tindakan= findViewById(R.id.isi_tindakan);
                         tindakan.setText(userJson.getString("tindakan"));

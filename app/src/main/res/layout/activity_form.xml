@@ -154,7 +154,17 @@
 
         </FrameLayout>
 
+        <Spinner
+            android:id="@+id/spin_kecamatan"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            android:textSize="10sp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/shape_spinner"
 
+            />
 
         <EditText
             android:id="@+id/detail_lokasi"
